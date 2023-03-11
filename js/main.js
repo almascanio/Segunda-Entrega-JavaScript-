@@ -4,16 +4,21 @@ alert ("Inicia el juego! (Piedra, papel o tijera). Elige muy bien tu ataque");
 // Variables, array, objetos, ciclo. 
 const nombreJugadores = []; 
 
-let cantidad = 3; 
+let cantidad = 1; 
 
+let jugador = undefined;
+
+let usuario = function (){
+    undefined;
+}
 do {
     let objeto = {};
     let ingresaUnNombre = prompt("Ingresa por favor tu nombre, para empezar a jugar");
     objeto.ingresaUnNombre = ingresaUnNombre.toUpperCase();
 
-    let eligeTuAtaque = prompt("Escribe un numero para elegir como empezar, del 0 al 2: (0 = Piedra, 1 = Papel, 2 = Tijera)"); 
+    usuario = prompt("Escribe un numero para elegir como empezar, del 0 al 2: (0 = Piedra, 1 = Papel, 2 = Tijera)");
 
-    let jugador = eligeTuAtaque;
+    let jugador = usuario;
 
     while (jugador >= "3"){
         switch (jugador){
@@ -29,11 +34,12 @@ do {
             default:
                 console.log("No elegiste ningun valor correcto del 0 al 2: (0 = Piedra, 1 = Papel, 2 = Tijera)");    
         }
-        jugador = eligeTuAtaque;
+        jugador = usuario();
     } 
     
-    objeto.eligeTuAtaque = eligeTuAtaque; 
+    objeto.usuario = usuario; 
     nombreJugadores.push(objeto)
+
 } while (nombreJugadores.length != cantidad)
 
 console.log(nombreJugadores);
