@@ -11,6 +11,7 @@ let jugador = undefined;
 let usuario = function (){
     undefined;
 }
+
 do {
     let objeto = {};
     let ingresaUnNombre = prompt("Ingresa por favor tu nombre, para empezar a jugar");
@@ -44,9 +45,12 @@ do {
 
 console.log(nombreJugadores);
 
-let enemigo = Math.round(Math.random() * 2);
+/*Jugada aleatoria
+0 piedra
+1 papel
+2 tijera*/
 
-//Jugada aleatoria
+let enemigo = Math.floor(Math.random() * 3);
 
 if (enemigo == 0){
     console.log("El enemigo escogio piedra");
@@ -56,18 +60,54 @@ if (enemigo == 0){
     console.log("El enemigo escogio tijera");
 }
 
-//Resultado del juego 
-if (jugador == enemigo){
-    console.log("Empate, no peleen");
+/*Resultado del juego 
+0 piedra 
+1 papel 
+2 tijera*/
+
+if (jugador == 0 && enemigo == 0){
+    console.log("Empate");
+} else if (jugador == 0 && enemigo == 1){
+    console.log("Gano el enemigo con Papel a Piedra");
 } else if (jugador == 0 && enemigo == 2){
-    console.log("Ganaste con piedra");
+    console.log("Ganaste con Piedra a Tijera");
+} else if ( jugador == 1 && enemigo == 1){
+    console.log("Empate");
 } else if (jugador == 1 && enemigo == 0){
-    console.log("Ganaste con papel"); 
+    console.log("Ganaste con Papel a Piedra");
+} else if (jugador == 1 && enemigo == 2){
+    console.log("Gano el enemigo con Tijera a Papel");
+} else if (jugador == 2 && enemigo == 2){
+    console.log("Empate")
+} else if (jugador == 2 && enemigo == 0){
+    console.log("Gano el enemigo con Piedra a Tijera")
 } else if (jugador == 2 && enemigo == 1){
-    console.log("Ganaste con tijera");
+    console.log("Ganaste con Tijera a Papel")
 } else {
-    console.log("Perdiste, vuelve a intentarlo, no te rindas");
+    console.log("Ingresa un numero para poder jugar y ser el ganador")
 }
 
 console.log("Termino el juego, gracias por participar");
+
+
+
+
+
+
+
+
+
+
+
+//if (jugador == enemigo){
+    //console.log("Empate, no peleen");
+//} else if (jugador == 0 && enemigo == 2){
+  //  console.log("Ganaste con piedra");
+//} else if (jugador == 1 && enemigo == 0){
+  //  console.log("Ganaste con papel"); 
+//} else if (jugador == 2 && enemigo == 1){
+  //  console.log("Ganaste con tijera");
+//} else {
+  //  console.log("Perdiste, vuelve a intentarlo, no te rindas");
+//}
 
